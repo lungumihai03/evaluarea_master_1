@@ -1,9 +1,10 @@
-def add(a, b):
-    return a + b
+from main import add, is_valid_message
 
-def is_valid_message(msg):
-    return isinstance(msg, str) and len(msg) > 0
+def test_add():
+    assert add(2, 3) == 5
 
-if __name__ == "__main__":
-    print("2 + 9 =", add(2, 9))
-    print("Valid:", is_valid_message("hello"))
+def test_valid_message():
+    assert is_valid_message("hello") == True
+
+def test_invalid_message():
+    assert is_valid_message("") == False
